@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WebApplication3
+namespace WebApi
 {
     public class WeatherForecastService : IWeatherForecastService
     {

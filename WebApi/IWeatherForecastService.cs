@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApplication3
+namespace WebApi
 {
     public interface IWeatherForecastService
     {

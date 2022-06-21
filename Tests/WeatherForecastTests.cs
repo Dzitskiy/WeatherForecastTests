@@ -3,8 +3,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using WebApplication3;
-using WebApplication3.Controllers;
+using WebApi;
+using WebApi.Controllers;
 using Xunit;
 
 namespace Tests
