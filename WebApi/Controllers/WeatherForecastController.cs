@@ -11,12 +11,14 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        #region
         //private static readonly string[] Summaries = new[]
         //{
         //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         //};
 
         //private readonly ILogger<WeatherForecastController> _logger;
+        #endregion
 
         private readonly IWeatherForecastService _weatherForecastService;
 
@@ -33,7 +35,7 @@ namespace WebApi.Controllers
         {
             return _weatherForecastService.Get();
 
-
+            #region
             //var rng = new Random();
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             //{
@@ -42,6 +44,7 @@ namespace WebApi.Controllers
             //    Summary = Summaries[rng.Next(Summaries.Length)]
             //})
             //.ToArray();
+            #endregion
         }
     }
 }

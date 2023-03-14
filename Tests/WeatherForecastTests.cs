@@ -53,5 +53,22 @@ namespace Tests
 
             Assert.Equal(object1Json, object2Json);
         }
+
+
+        [Theory]
+        //[Xunit.MemberData(1)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void WeatherForecastController_GetData_CheckCode(int code)
+        {
+            var weatherForecastStab = new WeatherForecastStub();
+            WeatherForecastController controller = new WeatherForecastController(weatherForecastStab/*new WeatherForecastStub()*/);
+
+            var controllerData = controller.Get();
+            var stubData = weatherForecastStab.Get();
+
+            Assert.NotEqual(controllerData, stubData);
+        }
     }   
 }
