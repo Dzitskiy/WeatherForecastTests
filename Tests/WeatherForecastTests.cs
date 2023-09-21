@@ -1,7 +1,5 @@
 using Moq;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using WebApi;
 using WebApi.Controllers;
@@ -54,21 +52,15 @@ namespace Tests
             Assert.Equal(object1Json, object2Json);
         }
 
-
+        //https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/
         [Theory]
-        //[Xunit.MemberData(1)]
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(3)]
+        [InlineData(4)]
         public void WeatherForecastController_GetData_CheckCode(int code)
         {
-            var weatherForecastStab = new WeatherForecastStub();
-            WeatherForecastController controller = new WeatherForecastController(weatherForecastStab/*new WeatherForecastStub()*/);
-
-            var controllerData = controller.Get();
-            var stubData = weatherForecastStab.Get();
-
-            Assert.NotEqual(controllerData, stubData);
+            Assert.True(code % 2 == 0);
         }
     }   
 }

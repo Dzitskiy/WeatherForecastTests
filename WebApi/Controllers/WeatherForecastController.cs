@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebApi.Controllers
 {
@@ -22,9 +18,10 @@ namespace WebApi.Controllers
 
         private readonly IWeatherForecastService _weatherForecastService;
 
-        public WeatherForecastController(//ILogger<WeatherForecastController> logger
+        public WeatherForecastController(
+            //ILogger<WeatherForecastController> logger
             IWeatherForecastService weatherForecastService
-                                         )
+            )
         {
             //_logger = logger;
             _weatherForecastService = weatherForecastService;
