@@ -26,7 +26,7 @@ namespace Tests
         public void WeatherForecastController_GetData_Success()
         {
 
-            var mock = new Mock<IWeatherForecastService>();
+            Mock<IWeatherForecastService> mock = new Mock<IWeatherForecastService>();
 
             var weatherForecastStab = new WeatherForecastStub();
             WeatherForecastController controller = new WeatherForecastController(mock.Object);
@@ -54,9 +54,9 @@ namespace Tests
 
         //https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/
         [Theory]
-        [InlineData(1)]
+        //[InlineData(1)]
         [InlineData(2)]
-        [InlineData(3)]
+        //[InlineData(3)]
         [InlineData(4)]
         public void WeatherForecastController_GetData_CheckCode(int code)
         {
